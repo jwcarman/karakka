@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2012-2015 Carman Consulting, Inc.
+  ~ Copyright (c) 2012-2015 Savoir Technologies, Inc.
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
   ~ limitations under the License.
   -->
 
-<features xmlns="http://karaf.apache.org/xmlns/features/v1.2.0" name="com.carmanconsulting.karakka-${project.version}">
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.2.0" name="com.savoirtech.karakka-${project.version}">
 
     <feature name='akka' description='Akka' version='${akka.version}' resolver='(obr)'>
         <bundle dependency="true">mvn:org.scala-lang/scala-library/${scala.version}</bundle>
