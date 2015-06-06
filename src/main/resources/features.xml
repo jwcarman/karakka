@@ -16,7 +16,7 @@
 
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.2.0" name="com.savoirtech.karakka-${project.version}">
 
-    <feature name='akka' description='Akka' version='${akka.version}' resolver='(obr)'>
+    <feature name='akka' description='Akka' version='${akka.version}' resolver="(obr)">
         <bundle dependency="true">mvn:org.scala-lang/scala-library/${scala.version}</bundle>
         <bundle dependency="true">mvn:io.gatling.uncommons.maths/uncommons-maths/${uncommons.maths.version}</bundle>
         <bundle dependency="true">mvn:io.netty/netty/${netty.version}</bundle>
@@ -27,6 +27,18 @@
         <bundle>mvn:com.typesafe.akka/akka-cluster_${scala.dep.version}/${akka.version}</bundle>
         <bundle>mvn:com.typesafe.akka/akka-remote_${scala.dep.version}/${akka.version}</bundle>
         <bundle>mvn:com.typesafe.akka/akka-osgi_${scala.dep.version}/${akka.version}</bundle>
+    </feature>
+
+    <feature name="akka-contrib" description="Akka Contributions" version="${akka.version}" resolver="(obr)">
+        <feature version="${akka.version}">akka</feature>
+
+        <bundle>wrap:mvn:com.typesafe.akka/akka-contrib_${scala.dep.version}/${akka.version}$Bundle-SymbolicName=com.typesafe.akka.contrib&amp;Bundle-Version=${akka.version}&amp;Export-Package=akka.contrib.jul;version="${akka.version}",akka.contrib.mailbox;version="${akka.version}",akka.contrib.pattern.protobuf.msg;version="${akka.version}",akka.contrib.pattern.protobuf;version="${akka.version}",akka.contrib.pattern;version="${akka.version}",akka.contrib.throttle;version="${akka.version}",akka.contrib.jul;version="${akka.version}"</bundle>
+    </feature>
+
+    <feature name="akka-slf4j" description="Akka SLF4J" version="${akka.version}" resolver="(obr)">
+        <feature version="${akka.version}">akka</feature>
+
+        <bundle>mvn:com.typesafe.akka/akka-slf4j_${scala.dep.version}/${akka.version}</bundle>
     </feature>
 
 </features>
