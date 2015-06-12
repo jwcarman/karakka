@@ -24,7 +24,7 @@
 
     <groupId>com.savoirtech.karakka</groupId>
     <artifactId>karakka</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <name>Karakka</name>
     <description>A Karaf Features Repository for Akka</description>
 
